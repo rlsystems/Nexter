@@ -1,0 +1,31 @@
+.features {
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); //this makes it responsive, auto-fit creates as many columns with the min/max parameters as it can before it adds new rows
+    grid-gap: 6rem;
+    align-items: start; //set this here, aligns text to top of cells
+
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: min-content 1fr; 
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem; //usually the same
+        grid-row: 1 / span 2; //-1 only works with explicit grid --makes span vertically 2 cells
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
